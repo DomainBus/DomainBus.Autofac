@@ -1,0 +1,2 @@
+# DomainBus.Autofac
+Autofac integration
