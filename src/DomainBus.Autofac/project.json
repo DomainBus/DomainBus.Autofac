@@ -1,0 +1,26 @@
+﻿{
+  "version": "4.0.0-pre-0",
+  "description": "Autofac integration for DomainBus",
+  "authors": [ "t" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+    "dependencies": {
+        "DomainBus": "4.0.0-pre-*",
+        "Autofac": "4.0.0-rc1-177"
+    },
+
+  "frameworks": {
+    "net46": { },
+    "dotnet5.4": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Collections": "4.0.11-beta-23516",
+        "System.Linq": "4.0.1-beta-23516",
+        "System.Runtime": "4.0.21-beta-23516",
+        "System.Threading": "4.0.11-beta-23516"
+      }
+    }
+  }
+}

@@ -10,6 +10,11 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+.hg*
+build/tools
+!nuget.exe
+
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
