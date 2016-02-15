@@ -1,8 +1,8 @@
 ﻿{
   "version": "4.0.0-pre-0",
   "description": "Autofac integration for DomainBus",
-  "authors": [ "t" ],
-  "tags": [ "" ],
+  "authors": [ "Mihai Mogosanu" ],
+  "tags": [ "domainbus","autofac" ],
   "projectUrl": "",
   "licenseUrl": "",
 
