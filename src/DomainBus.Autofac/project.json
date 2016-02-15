@@ -7,7 +7,7 @@
   "licenseUrl": "",
 
     "dependencies": {
-        "DomainBus": "4.0.0-pre-*",
+        "DomainBus": "4.0.0-pre-1",
         "Autofac": "4.0.0-rc1-177"
     },
 

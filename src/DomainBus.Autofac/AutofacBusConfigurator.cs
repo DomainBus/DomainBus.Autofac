@@ -22,7 +22,10 @@ namespace DomainBus.Autofac
         {
             _scope = scope;
         }
-        protected override void RegisterSingletonInstance<T>(T instance)
+
+     public ContainerBuilder ContainerBuilder => _cb;
+
+     protected override void RegisterSingletonInstance<T>(T instance)
         {
             _cb.Register(c => instance).AsSelf().AsImplementedInterfaces().SingleInstance();
         }
@@ -34,7 +37,7 @@ namespace DomainBus.Autofac
 
      protected override void RegisterInstanceFactory<T>(Func<T> instance)
      {
-         _cb.Register(c => instance()).As<T>();
+         _cb.Register(c => instance()).As<T>().AsSelf();
      }
 
      protected override void ContainerConfigurationCompleted()
@@ -52,7 +55,7 @@ namespace DomainBus.Autofac
             {
                 _cb.Update(_scope.ComponentRegistry);
             }
-            
+            _cb=new ContainerBuilder();
             return new AutofacWrapper(_scope);
         }
 
