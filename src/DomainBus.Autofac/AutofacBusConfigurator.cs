@@ -11,11 +11,11 @@ namespace DomainBus.Autofac
  public class AutofacBusConfigurator : AbstractBusBuilder
     {
         private ILifetimeScope _scope;
-        private ContainerBuilder _cb;
+        private ContainerBuilder _cb=new ContainerBuilder();
 
         public AutofacBusConfigurator():this(null)
         {
-            _cb = new ContainerBuilder();
+            
         }
 
         public AutofacBusConfigurator(ILifetimeScope scope)
