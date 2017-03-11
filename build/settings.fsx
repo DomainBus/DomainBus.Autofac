@@ -3,13 +3,11 @@ open Fake
 
 let projName="DomainBus.Autofac"
 let projDir= "..\src" @@ projName
-let testDir="..\src" @@ "Tests"
+let testDir="..\src" @@ "Tests\Tests.csproj"
 
-let testOnCore=true
 let additionalPack=[]
 
-let localNugetRepo="E:/Libs/nuget"
-let nugetExeDir="tools"
+
 
 
 
