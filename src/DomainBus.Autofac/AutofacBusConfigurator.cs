@@ -30,9 +30,14 @@ namespace DomainBus.Autofac
             _cb.Register(c => instance).AsSelf().AsImplementedInterfaces().SingleInstance();
         }
 
-     protected override void Register(IEnumerable<Type> types)
+     protected override void Register(IEnumerable<Type> types, bool asSingleton=false)
      {
-            _cb.RegisterTypes(types.ToArray()).AsSelf();
+         if (!asSingleton)
+         {
+             _cb.RegisterTypes(types.ToArray()).AsSelf();
+                return;
+         }
+            _cb.RegisterTypes(types.ToArray()).AsSelf().SingleInstance();
         }
 
      protected override void RegisterInstanceFactory<T>(Func<T> instance)
@@ -59,9 +64,6 @@ namespace DomainBus.Autofac
             return new AutofacWrapper(_scope);
         }
 
-   
-
-     
-      
+       
     }
 }
