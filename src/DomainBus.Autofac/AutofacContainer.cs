@@ -5,11 +5,11 @@ using CavemanTools.Infrastructure;
 
 namespace DomainBus.Autofac
 {
-    internal class AutofacWrapper : IContainerScope
+    public class AutofacContainer : IContainerScope
     {
         private readonly ILifetimeScope _container;
 
-        public AutofacWrapper(ILifetimeScope container)
+        public AutofacContainer(ILifetimeScope container)
         {
             _container = container;
         }
@@ -59,7 +59,7 @@ namespace DomainBus.Autofac
 
         public IContainerScope BeginLifetimeScope()
         {
-            return new AutofacWrapper(_container.BeginLifetimeScope());
+            return new AutofacContainer(_container.BeginLifetimeScope());
         }
     }
 

@@ -31,7 +31,7 @@ namespace Tests
         [Fact]
         public void everything_is_registered_properly()
         {
-            var bus = ServiceBus.ConfigureWith(new AutofacBusConfigurator())
+            var bus = ServiceBus.ConfigureWith(new AutofacBusRegistration())
                 .RegisterInContainer(cb=>cb.RegisterType<MyEvent>().AsSelf())
                 .AsMemoryBus(typeof (IntegrationTests).GetTypeInfo().Assembly);
 
