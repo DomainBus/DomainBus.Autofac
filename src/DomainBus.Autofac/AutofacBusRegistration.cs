@@ -22,7 +22,7 @@ namespace DomainBus.Autofac
         {
             _cb.RegisterType<CommandResultMediator>().AsImplementedInterfaces().SingleInstance();
             _cb.Register(c => c.Resolve<IDomainBus>().GetCommandResultMediator(c.Resolve<ICommandResultMediator>()))
-                .As<IReturnCommandResult>().SingleInstance();
+                .AsImplementedInterfaces().SingleInstance();
             return this;
         }
 
@@ -43,14 +43,14 @@ namespace DomainBus.Autofac
             _cb.Register(c => instance).AsSelf().AsImplementedInterfaces().SingleInstance();
         }
 
-        public void Register(IEnumerable<Type> types, bool asSingleton=false)
+        public void Register(Type[] types, bool asSingleton=false)
      {
          if (!asSingleton)
          {
-             _cb.RegisterTypes(types.ToArray()).AsSelf();
+             _cb.RegisterTypes(types).AsSelf();
                 return;
          }
-            _cb.RegisterTypes(types.ToArray()).AsSelf().SingleInstance();
+            _cb.RegisterTypes(types).AsSelf().SingleInstance();
         }
 
         public void RegisterInstanceFactory<T>(Func<T> instance)

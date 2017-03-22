@@ -20,7 +20,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DomainBus" Version="4.0.0-beta7-1" />
+    <PackageReference Include="DomainBus" Version="4.0.0-beta7-2" />
     <PackageReference Include="Autofac" Version="4.4.0" />
   </ItemGroup>
 
