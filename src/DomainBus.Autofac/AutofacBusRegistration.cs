@@ -26,6 +26,11 @@ namespace DomainBus.Autofac
             return this;
         }
 
+        /// <summary>
+        /// Requires implementation of <see cref="IAppendEventsToStore"/> to be registered in the container
+        /// </summary>
+        /// <param name="singleton"></param>
+        /// <returns></returns>
         public AutofacBusRegistration WithEventStorePublisherSupport(bool singleton=true)
         {
             var reg =
